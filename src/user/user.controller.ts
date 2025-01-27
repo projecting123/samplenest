@@ -1,5 +1,4 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { UserDBService } from 'src/schema/user.db.service';
 import { UserService } from './user.service';
 
 @Controller('api')
