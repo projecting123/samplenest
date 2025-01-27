@@ -9,7 +9,7 @@ export class UserController {
         return 'Entry path of user api endpoint';
     }
 
-    @Get('/getuser:email')
+    @Get('/getuser/:email')
     async getUser(@Param('email') email: string){
         return await this.user.getUserByEmail(email);
     }
