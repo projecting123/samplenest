@@ -2,10 +2,10 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { UserDBService } from 'src/schema/user.db.service';
 import { UserService } from './user.service';
 
-@Controller('user')
+@Controller('api')
 export class UserController {
     constructor(private readonly user: UserService){}
-    @Get()
+    @Get('/user')
     index(){
         return 'Entry path of user api endpoint';
     }
