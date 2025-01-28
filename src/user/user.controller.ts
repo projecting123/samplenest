@@ -1,16 +1,17 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 
-@Controller('api')
+@Controller()
 export class UserController {
     constructor(private readonly user: UserService){}
-    @Get('/user')
-    index(){
-        return 'Entry path of user api endpoint';
+
+    @Get('/getuser')
+    async getUser(@Query('email') email: string){
+        return await this.user.getUserByEmail(email);
     }
 
-    @Get('/getuser/:email')
-    async getUser(@Param('email') email: string){
-        return await this.user.getUserByEmail(email);
+    @Post('/signup')
+    async signup(){
+        
     }
 }

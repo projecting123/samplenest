@@ -9,4 +9,8 @@ export class UserService {
     async getUserByEmail(email: string) {
         return await this.userDB.getUserByEmail(email);
     }
+
+    async signup(newUser) {
+
+    }
 }
